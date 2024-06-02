@@ -40,7 +40,9 @@ Por default, o MSX inicializado é um MSX2+ genérico, no entanto, os aparelhos 
 
 # Limitações
 
-Por ser um projeto experimental, ainda que use o emulador do Blue MSX, que está bem defasado, é preciso ter em mente que:
+- Por ser uma imagem personalizada, o acesso Wifi e SSH da imagem linux está desativada. Pode ser configurada posteriormente, no entanto, não é o intuito desse projeto. Todavia, se quiser configurar o Wifi para acesso remoto, fique a vontade.
+  
+Sobre o RPMC tenha em mente que:
 
 - Cartuchos de IO (ex: WozBlaster OPL4, Obsonet...) não funcionam, travam o emulador apesar de parecer que a parte da ROM deles carregam.
 - SD Mapper não funciona, inicializa com os leds ligados e trava na inicialização.
@@ -98,6 +100,14 @@ Internamente a emulação carrega um disquete com o MSX-DOS 2.11 (está no /home
 Todos os discos virtuais devem estar no formato msx-dos de 720kb. No Windows, use o app Disk-Manager, no caso de dúvidas, tem o vídeo do TByteCreator explicando (https://www.youtube.com/watch?v=ycX79EpJy6g).
 
 
+# Changelog
+
+- Versão 0.9
+  * Imagem inicial voltada para versão 32bits do Raspiberry PI OS
+  * Suporte a RPMC
+  * Atalhos somente para o MSX Expert e MSX 2
+  * Desligamento ainda não implementado
+    
 # Licença
 
 GNU Public License (GPL)
