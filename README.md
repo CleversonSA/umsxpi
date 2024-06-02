@@ -4,6 +4,10 @@ Um "clone" do MSX 1 e MSX 2 baseado no port do emulador Blue MSX para linux e no
 
 Basta queimar a imagem em um cartão SD e usar o emulador do MSX, mensagens do console, comandos linux, logins etc. Diversão direto ao assunto.
 
+# ANTES DE COMEÇAR
+
+Lembre-se que esse é um projeto hobby, está ainda no estágio beta e de refinamento. Entenda que problemas, remotos, poderão acontecer. Então, por sua conta em risco! Boa sorte.
+
 # RPMC
 
 O projeto nasceu para a utilização da placa adaptadora de cartuchos de MSX para Raspberry PI, criada por meesokim (https://github.com/meesokim/msxslot) e ser quase um "MSX" mini, ainda que emulado. A placa pode ser montada ou pode ser adquirida no site do Victor Trucco (https://loja.victortrucco.com/msxpi)
@@ -111,5 +115,3 @@ Todos os discos virtuais devem estar no formato msx-dos de 720kb. No Windows, us
 # Licença
 
 GNU Public License (GPL)
-
-AVISO: Todo o conteúdo do repositório foi disponibilizado como Hobby, não visando fundos lucrativos. O uso e consequência do uso ou mau uso do conteúdo aqui apresentado é por sua conta e risco.
