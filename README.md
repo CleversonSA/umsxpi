@@ -26,6 +26,12 @@ Você irá precisar de:
 
 # Instalação
 
+Devido a limitacao de tamanho de arquivos do GitHub (100MB no plano free), as imagens tiveram que ser hospedadas em outro lugar, todavia, seguem os links abaixo:
+
+| Data de lancamento | Arquivo | Tamanho estimado | Link para download |
+| :---: | :---: | :---: | :---: |
+| 02/06/2024 | umsxpi-rpi3-32bit-v0.9.0.img | 3.3GB | https://drive.google.com/file/d/13TJa3COzMmg2EzLH7Z2qVYRm4DpMA4OT/view?usp=drive_link |
+
 Baixe a imagem mais recente no repositório e queime em um cartão SD utilizando o programa de preferência. Se for o Windows, por exemplo, existe o Balena Etcher (https://etcher.balena.io/) que pode fazer esse trabalho. No linux, pode ser usado o comando dd ou o app Disks (distribuições baseadas no Ubuntu). 
 
 Após queimar a imagem do umsxpi no cartão no PC, coloque-o no Raspberry PI, ligue o teclado, a placa RPMC nos pinos da GPIO, conecte o Raspberry PI no monitor HDMI. Por último, a fonte no RPi, logo será inicializado.
