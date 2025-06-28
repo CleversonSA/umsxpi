@@ -30,6 +30,7 @@ Devido a limitacao de tamanho de arquivos do GitHub (100MB no plano free), as im
 
 | Data de lancamento | Arquivo | Tamanho estimado | Link para download |
 | :---: | :---: | :---: | :---: |
+| 28/06/2025 | umsxpi-rpi32-openmsx-1.0.0.img | 5.3GB | https://drive.google.com/file/d/1iXu4fsbaaNVEj0S_WQ1oQdfGDsGu6SOG/view?usp=drive_link |
 | 02/06/2024 | umsxpi-rpi3-32bit-v0.9.0.img | 3.3GB | https://drive.google.com/file/d/13TJa3COzMmg2EzLH7Z2qVYRm4DpMA4OT/view?usp=drive_link |
 
 Baixe a imagem mais recente no repositório e queime em um cartão SD utilizando o programa de preferência. Se for o Windows, por exemplo, existe o Balena Etcher (https://etcher.balena.io/) que pode fazer esse trabalho. No linux, pode ser usado o comando dd ou o app Disks (distribuições baseadas no Ubuntu). 
@@ -38,7 +39,61 @@ Após queimar a imagem do umsxpi no cartão no PC, coloque-o no Raspberry PI, li
 
 O primeiro boot pode demorar até 20-30 segundos e a tela do MSX2 aparecerá para uso com o MSX-DOS carregado.
 
-# Uso
+---
+
+# PARA VERSÃO NOVA BASEADA EM OPENMSX
+
+**Atenção - No OpenMSX o RPMC NÃO FUNCIONA**
+
+Nessa versão de imagem a placa RPMC NÃO FUNCIONA! Existe uma versão do OpenMSX antiga que foi adicionado suporte a essa placa, no entanto, a versão está muito defasada e talvez em um futuro pode ser feito um merge, mas não sei se vale a pena. Esteja ciente disso ao usar essa nova imagem. A imagem vem completa com imagem de HD de 1GB (dá e sobra), MSX-DOS2, SofaRun e extras e era de meu uso pessoal para um portátil que montei com o Raspberry PI 3B.
+
+**Uso**
+
+ - Insira o cartão no Raspberry PI 3B
+ - Execute e aguarde em torno de 20 segundos. O sistema irá carregar.
+
+**Reiniciando o MSX dentro do OpenMSX sem precisar reiniciar o Raspberry PI (útil quando está jogando)**
+
+  - Pressione a tecla F10 para abrir o Console
+  - Digite o comando "reset" e pressione ENTER
+  - Pressione a tecla F10 para fechar o Console.
+
+**Desligando de maneira correta o Raspberry para evitar corrompimento do SD**
+
+  - Pressione a tecla F10 para abrir o Console
+  - Digite o comando "quit" e pressione ENTER
+  - Aguarde o encerramento do linux e desligue o Raspberry PI com segurança
+
+**Acessando modo administrador (linux, para manutenções avançadas)**
+
+  - Pressione as teclas ALT+F3 depois ENTER
+  - No prompt do console entre com o usuário "umsxpi" pressione ENTER
+  - Entre com a senha "umsxpi"
+  - Todos os scripts e atalhos estão na pasta /home/umsxpi. Altere com cautela.
+
+**Adicionando arquivos à imagem do OpenMSX (ROMs, jogos, utilitários)**
+
+  - Desligue o Raspberry
+  - Insira o cartão no computador PC
+  - Crie uma pasta chamada diskA na raiz da partição de boot do cartão
+  - Coloque os arquivos a copiar para imagem
+  - Ejete o cartão, coloque no Raspberry Pi e o inicie
+  - Aguarde a inicialização completa do MSX-DOS2
+  - Pressione F10 para abrir o Console
+  - digite o comando "diska /boot/firmware/diskA" e pressione ENTER
+  - No MSX-DOS2 digite A: e pressione ENTER
+  - Digite o comando "DIR" e pressione ENTER, os arquivos estarão lá.
+  - Você pode usar o comando copy para copiar os arquivos para a unidade C:
+
+**Ativando modo 80 colunas**
+
+  - No MSX-DOS2 digite o comando "mode 80" e pressione ENTER
+  - Para voltar a 40 colunas (default), digite o comando "mode 40" e pressione ENTER
+---
+
+# PARA VERSÃO ANTIGA BASEADA EM BLUEBERRYMSX 
+
+**Uso**
 
 Por default, o MSX inicializado é um MSX2+ genérico, no entanto, os aparelhos que o Blue MSX suportar poderão ser utilizados (ver sessão configurações).
 
@@ -48,7 +103,7 @@ Por default, o MSX inicializado é um MSX2+ genérico, no entanto, os aparelhos 
 
 - Para reiniciar o emulador, pressione F12.
 
-# Limitações
+**Limitações** 
 
 - Por ser uma imagem personalizada, o acesso Wifi e SSH da imagem linux está desativada. Pode ser configurada posteriormente, no entanto, não é o intuito desse projeto. Todavia, se quiser configurar o Wifi para acesso remoto, fique a vontade.
   
@@ -66,7 +121,7 @@ Além disso:
 - Raspberry PI 4, 400 ou superior - Pendente de teste. Não garanto que funcione.
 - Pode ser que o SD corrompa após muitos desligues do Raspberry PI (se colocar centenas de vezes, explicado na sessão Desligando o umsxpi)
 
-# Desligando o umsxpi
+**Desligando o umsxpi**
 
 Até o momento, desligar seria desligar o Raspberry PI da fonte mesmo. No linux, isso não é recomendado, pode corromper o SD (em mais de 10 anos que acompanho RPi, nunca me aconteceu), isso se deve por que o blueberry MSX é lançado como serviço do Linux, muito antes do login no S.O.
 
@@ -74,7 +129,7 @@ Assim, não consigo capturar as entradas do usuário para uma tecla de atalho de
 
 É uma limitação que estou pesquisando uma solução no momento.
 
-# Configurações:
+**Configurações:**
 
 - Desligue o Raspberry PI e coloque o cartão em um leitor de cartões no PC. A partição boot será utilizada para as configurações.
 
@@ -98,7 +153,7 @@ Assim, não consigo capturar as entradas do usuário para uma tecla de atalho de
 	* O serviço que lança o emulador é o _/lib/systemd/system/bluemsx.service_
 
 
-# Disquetes virtuais (experimental):
+**Disquetes virtuais (experimental):**
 
 Internamente a emulação carrega um disquete com o MSX-DOS 2.11 (está no /home/umsxpi). No entanto, se na partição de boot do cartão SD estiver presente os seguintes arquivos abaixo (respeitar maiúsculas e minúsculas), serão carregados no emulador:
 
@@ -109,7 +164,7 @@ Internamente a emulação carrega um disquete com o MSX-DOS 2.11 (está no /home
 
 Todos os discos virtuais devem estar no formato msx-dos de 720kb. No Windows, use o app Disk-Manager, no caso de dúvidas, tem o vídeo do TByteCreator explicando (https://www.youtube.com/watch?v=ycX79EpJy6g).
 
-
+---
 # Changelog
 
 - Versão 0.9
@@ -118,6 +173,7 @@ Todos os discos virtuais devem estar no formato msx-dos de 720kb. No Windows, us
   * Atalhos somente para o MSX Expert e MSX 2
   * Desligamento ainda não implementado
     
+---
 # Licença
 
 GNU Public License (GPL)
