@@ -1,4 +1,4 @@
-# umsxpi
+# uosxpi
 
 Um "clone" do MSX 1 e MSX 2 baseado no port do emulador Blue MSX para linux e no fork do Blueberry MSX (https://github.com/matheusjgsantos/BlueberryMSX-2.0plus), usando uma imagem refinada do Raspberry PI OS Lite 32bits e voltado para a utilização da placa adaptadora RPMC (https://github.com/meesokim/msxslot).
 
@@ -30,12 +30,12 @@ Devido a limitacao de tamanho de arquivos do GitHub (100MB no plano free), as im
 
 | Data de lancamento | Arquivo | Tamanho estimado | Link para download |
 | :---: | :---: | :---: | :---: |
-| 28/06/2025 | umsxpi-rpi32-openmsx-1.0.0.img | 5.3GB | https://drive.google.com/file/d/1iXu4fsbaaNVEj0S_WQ1oQdfGDsGu6SOG/view?usp=drive_link |
-| 02/06/2024 | umsxpi-rpi3-32bit-v0.9.0.img | 3.3GB | https://drive.google.com/file/d/13TJa3COzMmg2EzLH7Z2qVYRm4DpMA4OT/view?usp=drive_link |
+| 28/06/2025 | uosxpi-rpi32-openmsx-1.0.0.img | 5.3GB | https://drive.google.com/file/d/1iXu4fsbaaNVEj0S_WQ1oQdfGDsGu6SOG/view?usp=drive_link |
+| 02/06/2024 | uosxpi-rpi3-32bit-v0.9.0.img | 3.3GB | https://drive.google.com/file/d/13TJa3COzMmg2EzLH7Z2qVYRm4DpMA4OT/view?usp=drive_link |
 
 Baixe a imagem mais recente no repositório e queime em um cartão SD utilizando o programa de preferência. Se for o Windows, por exemplo, existe o Balena Etcher (https://etcher.balena.io/) que pode fazer esse trabalho. No linux, pode ser usado o comando dd ou o app Disks (distribuições baseadas no Ubuntu). 
 
-Após queimar a imagem do umsxpi no cartão no PC, coloque-o no Raspberry PI, ligue o teclado, a placa RPMC nos pinos da GPIO, conecte o Raspberry PI no monitor HDMI. Por último, a fonte no RPi, logo será inicializado.
+Após queimar a imagem do uosxpi no cartão no PC, coloque-o no Raspberry PI, ligue o teclado, a placa RPMC nos pinos da GPIO, conecte o Raspberry PI no monitor HDMI. Por último, a fonte no RPi, logo será inicializado.
 
 O primeiro boot pode demorar até 20-30 segundos e a tela do MSX2 aparecerá para uso com o MSX-DOS carregado.
 
@@ -119,9 +119,9 @@ Além disso:
 
 - Raspberry PIs abaixo de 3B não funciona a imagem. Ou ficam lentos demais ou nem inicializa (testei no Raspberry PI Zero por exemplo).
 - Raspberry PI 4, 400 ou superior - Pendente de teste. Não garanto que funcione.
-- Pode ser que o SD corrompa após muitos desligues do Raspberry PI (se colocar centenas de vezes, explicado na sessão Desligando o umsxpi)
+- Pode ser que o SD corrompa após muitos desligues do Raspberry PI (se colocar centenas de vezes, explicado na sessão Desligando o uosxpi)
 
-**Desligando o umsxpi**
+**Desligando o uosxpi**
 
 Até o momento, desligar seria desligar o Raspberry PI da fonte mesmo. No linux, isso não é recomendado, pode corromper o SD (em mais de 10 anos que acompanho RPi, nunca me aconteceu), isso se deve por que o blueberry MSX é lançado como serviço do Linux, muito antes do login no S.O.
 
