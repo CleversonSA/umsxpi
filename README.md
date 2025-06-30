@@ -71,6 +71,18 @@ Nessa versão de imagem a placa RPMC NÃO FUNCIONA! Existe uma versão do OpenMS
   - Entre com a senha "umsxpi"
   - Todos os scripts e atalhos estão na pasta /home/umsxpi. Altere com cautela.
 
+**Problemas no Som ou sem áudio HDMI (RPi 4/RPi 400)**
+
+  - Entre no modo administrador do linux, passos no parágrafo anterior
+  - Digite o comando "sudo raspi-config" e pressione ENTER
+  - Entre no menu "System Options"
+  - Escolha a opção "Audio"
+  - Escolha a opção "HDMI" ou "bcm2835 HDMI" e pressione ENTER
+  - Aperte TAB até o botão FINISH estar selecionado, pressione ENTER
+  - Digite o comando "sudo reboot" e pressione ENTER
+
+  O aúdio deve funcionar, use esse mesmo menu se quiser trocar por outras saídas, como placa de som USB por exemplo.
+  
 **Adicionando arquivos à imagem do OpenMSX (ROMs, jogos, utilitários)**
 
   - Desligue o Raspberry
@@ -167,6 +179,10 @@ Todos os discos virtuais devem estar no formato msx-dos de 720kb. No Windows, us
 ---
 # Changelog
 
+- Versão 1.0
+  * Imagem voltada para o OpenMSX sem suporte ao MSX-Hat ainda
+  * Criada com a versão mais recente do Raspberry PI OS Lite (2024)
+    
 - Versão 0.9
   * Imagem inicial voltada para versão 32bits do Raspiberry PI OS
   * Suporte a RPMC
