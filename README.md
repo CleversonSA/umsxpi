@@ -101,6 +101,25 @@ Nessa versão de imagem a placa RPMC NÃO FUNCIONA! Existe uma versão do OpenMS
 
   - No MSX-DOS2 digite o comando "mode 80" e pressione ENTER
   - Para voltar a 40 colunas (default), digite o comando "mode 40" e pressione ENTER
+
+**Desabilitando os avisos de low-voltage (LEIA COM ATENÇÃO)**
+
+  Já não coloquei esse recurso como default por que seria como se o marcador de gasolina do carro estivesse piscando e marcando pouco combustível e você colocasse uma fita cobrindo o marcador e seguindo adiante. Entretanto, dependendo do projeto que você utilize para o seu Raspberry PI, pode acontecer de não ter nenhum problema na alimentação e queira desativar o "low-voltage warning".
+
+  Primeiro, entenda que essa mensagem acontece por que a voltagem suprida para o Raspberry PI (em especial o 3b) está abaixo da mínima recomendada pelo fabricante. Tem fontes que indicam 5v/3A, mas na hora de uma carga, caem a tensão para 4.9v, 4.8v, fazendo o RPI funcionar, mas esse aviso virá a tela. Pelo fabricante, podem ocorrer problemas de corrompimento de SD, etc. O RPI 3b quando está em pico de consumo, especialmente com Wifi e Emulador ativos, consome os limites de uma fonte, que um carregador de celular, por exemplo, não é capaz de suprir. O meu RPI3 já tem quase 10 anos, nunca deu problema e já sofreu com fontes ruins e powebanks.
+  
+  Então, se as mensagens incomodam e se se estiver CIENTE dos riscos, essa alteração é por SUA CONTA EM RISCO SE CASO OCORRA ALGUMA FALHA, DEFEITO DO RPI, PERCA DE DADOS, ETC...ASSIM COMO QUALQUER PROJETO OPEN SOURCE:
+
+  - Certifique-se que esteja no modo administrador do linux
+  - Digite "sudo nano /boot/firmware/config.txt"
+  - Adicione a seguinte linha ao final do arquivo:
+    ```
+    avoid_warnings=2
+    ```
+  - Aperte CTRL+O (tecla ó) e pressione ENTER para salvar o arquivo
+  - Aperte CTRL+X e pressione ENTER para sair
+  - Digite o comando "sudo reboot"
+    
 ---
 
 # PARA VERSÃO ANTIGA BASEADA EM BLUEBERRYMSX 
